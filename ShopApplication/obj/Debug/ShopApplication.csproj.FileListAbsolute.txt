@@ -1,0 +1,11 @@
+D:\KnockoutProjects\KnockOutAPI\ShopApplication\bin\Debug\ShopApplication.dll
+D:\KnockoutProjects\KnockOutAPI\ShopApplication\bin\Debug\ShopApplication.pdb
+D:\KnockoutProjects\KnockOutAPI\ShopApplication\bin\Debug\Domain.dll
+D:\KnockoutProjects\KnockOutAPI\ShopApplication\bin\Debug\EntityFrameworkConnection.dll
+D:\KnockoutProjects\KnockOutAPI\ShopApplication\bin\Debug\EntityFramework.dll
+D:\KnockoutProjects\KnockOutAPI\ShopApplication\bin\Debug\Domain.pdb
+D:\KnockoutProjects\KnockOutAPI\ShopApplication\bin\Debug\EntityFrameworkConnection.pdb
+D:\KnockoutProjects\KnockOutAPI\ShopApplication\bin\Debug\EntityFramework.xml
+D:\KnockoutProjects\KnockOutAPI\ShopApplication\obj\Debug\ShopApplication.csprojResolveAssemblyReference.cache
+D:\KnockoutProjects\KnockOutAPI\ShopApplication\obj\Debug\ShopApplication.dll
+D:\KnockoutProjects\KnockOutAPI\ShopApplication\obj\Debug\ShopApplication.pdb

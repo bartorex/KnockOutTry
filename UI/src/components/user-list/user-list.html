@@ -1,0 +1,46 @@
+<h3>User List</h3>
+
+<div class="topAndBotMargin">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Remove User</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: users">
+            <tr data-bind="click: $parent.goToUserData">
+                <td data-bind="text: FirstName"></td>
+                <td data-bind="text: LastName"></td>
+                <td data-bind="text: Gender"></td>
+                <td><button data-bind="click: $parent.removeUser" class="btn btn-danger">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-success" data-bind="click: addUser">Add User</button>
+</div>
+
+<div data-bind="with: newUser" class="topAndBotMargin">
+    <form class="form-horizontal">
+        <p class="form-horizontal">
+            <label>First Name:</label><input data-bind="value: FirstName" class="form-control" />
+        </p>
+        <p class="form-horizontal">
+            <label>Last Name:</label><input data-bind="value: LastName" class="form-control" />
+        </p>
+        <p class="form-horizontal">
+            <label>Gender:</label><input data-bind="value: Gender" class="form-control" />
+        </p>
+        <button class="btn btn-success" data-bind="click: $parent.saveUser">Save</button>
+        <button class="btn btn-danger" data-bind="click: $parent.cancelAddUser">Cancel</button>
+    </form>
+</div>
+
+<div data-bind="with: chosenUserData, visible: chosenUserData != null">
+    <p><label>Id:</label><span data-bind="text: Id"></span></p>
+    <p><label>First Name:</label> <span data-bind="text: FirstName"></span></p>
+    <p><label>Last Name:</label> <span data-bind="text: LastName"></span></p>
+    <p><label>Gender:</label> <span data-bind="text: Gender"></span></p>
+</div>

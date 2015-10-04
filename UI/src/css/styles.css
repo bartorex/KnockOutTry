@@ -1,0 +1,11 @@
+#page {
+	margin-top: 80px;
+}
+
+.topAndBotMargin {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 5px;
+    border: 1px solid #eee;
+    border-radius: 6px
+}

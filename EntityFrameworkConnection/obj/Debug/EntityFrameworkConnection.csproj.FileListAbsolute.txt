@@ -1,0 +1,12 @@
+D:\KnockoutProjects\KnockOutAPI\EntityFrameworkConnection\bin\Debug\EntityFrameworkConnection.dll.config
+D:\KnockoutProjects\KnockOutAPI\EntityFrameworkConnection\bin\Debug\EntityFrameworkConnection.dll
+D:\KnockoutProjects\KnockOutAPI\EntityFrameworkConnection\bin\Debug\EntityFrameworkConnection.pdb
+D:\KnockoutProjects\KnockOutAPI\EntityFrameworkConnection\bin\Debug\Domain.dll
+D:\KnockoutProjects\KnockOutAPI\EntityFrameworkConnection\bin\Debug\EntityFramework.dll
+D:\KnockoutProjects\KnockOutAPI\EntityFrameworkConnection\bin\Debug\EntityFramework.SqlServer.dll
+D:\KnockoutProjects\KnockOutAPI\EntityFrameworkConnection\bin\Debug\Domain.pdb
+D:\KnockoutProjects\KnockOutAPI\EntityFrameworkConnection\bin\Debug\EntityFramework.xml
+D:\KnockoutProjects\KnockOutAPI\EntityFrameworkConnection\bin\Debug\EntityFramework.SqlServer.xml
+D:\KnockoutProjects\KnockOutAPI\EntityFrameworkConnection\obj\Debug\EntityFrameworkConnection.csprojResolveAssemblyReference.cache
+D:\KnockoutProjects\KnockOutAPI\EntityFrameworkConnection\obj\Debug\EntityFrameworkConnection.dll
+D:\KnockoutProjects\KnockOutAPI\EntityFrameworkConnection\obj\Debug\EntityFrameworkConnection.pdb
