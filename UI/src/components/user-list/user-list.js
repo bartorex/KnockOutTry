@@ -19,7 +19,7 @@ define(['knockout', 'text!./user-list.html'], function (ko, templateMarkup) {
         var self = this;
         self.users = ko.observableArray();
         self.chosenUserData = ko.observable();
-        self.newUser = ko.observable();
+        self.newUser = ko.observable(null);
 
         $.getJSON("http://localhost:6045/api/user", function (data) {
             //var mappedUsers = $.map(data, function (item) { return new User(item) });
@@ -27,7 +27,11 @@ define(['knockout', 'text!./user-list.html'], function (ko, templateMarkup) {
         });
 
         self.goToUserData = function (user) {
-            self.chosenUserData(user);
+            if (self.chosenUserData() != user) {
+                self.chosenUserData(user);
+            } else {
+                self.chosenUserData(null);
+            }         
         }
 
         self.removeUser = function (user) {
@@ -51,6 +55,16 @@ define(['knockout', 'text!./user-list.html'], function (ko, templateMarkup) {
             self.newUser(null);
         }
 
+        self.hideUserData = function() {
+            self.chosenUserData(null);
+        }
+
+        self.updateUser = function() {
+            var currentUser = self.chosenUserData();
+            self.chosenUserData(null);
+            self.newUser(currentUser);
+        }
+
         self.saveUser = function () {
             var newUser = self.newUser();
             $.post("http://localhost:6045/api/user", newUser).done(function(id) {
@@ -59,8 +73,6 @@ define(['knockout', 'text!./user-list.html'], function (ko, templateMarkup) {
             self.users.push(newUser);
             self.newUser(null);
         }
-
-
     }
 
     // This runs when the component is torn down. Put here any logic necessary to clean up,
