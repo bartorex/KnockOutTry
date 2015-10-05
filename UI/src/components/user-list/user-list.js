@@ -1,11 +1,11 @@
 define(['knockout', 'text!./user-list.html'], function (ko, templateMarkup) {
 
-    function User(data) {
-        this.Id = ko.observable(data.Id);
-        this.FirstName = ko.observable(data.FirstName);
-        this.LastName = ko.observable(data.LastName);
-        this.Gender = ko.observable(data.Gender);
-    }
+    //function User(data) {
+    //    this.Id = ko.observable(data.Id);
+    //    this.FirstName = ko.observable(data.FirstName);
+    //    this.LastName = ko.observable(data.LastName);
+    //    this.Gender = ko.observable(data.Gender);
+    //}
 
     function User() {
         this.Id = ko.observable();
@@ -20,6 +20,7 @@ define(['knockout', 'text!./user-list.html'], function (ko, templateMarkup) {
         self.users = ko.observableArray();
         self.chosenUserData = ko.observable();
         self.newUser = ko.observable(null);
+        self.updatedUser = ko.observable(null);
 
         $.getJSON("http://localhost:6045/api/user", function (data) {
             //var mappedUsers = $.map(data, function (item) { return new User(item) });
@@ -55,14 +56,18 @@ define(['knockout', 'text!./user-list.html'], function (ko, templateMarkup) {
             self.newUser(null);
         }
 
+        self.cancelUpdateUser = function() {
+            self.updatedUser(null);
+        }
+
         self.hideUserData = function() {
             self.chosenUserData(null);
         }
 
-        self.updateUser = function() {
+        self.goToUpdateUser = function() {
             var currentUser = self.chosenUserData();
             self.chosenUserData(null);
-            self.newUser(currentUser);
+            self.updatedUser(currentUser);
         }
 
         self.saveUser = function () {
@@ -72,6 +77,19 @@ define(['knockout', 'text!./user-list.html'], function (ko, templateMarkup) {
             });
             self.users.push(newUser);
             self.newUser(null);
+        }
+
+        self.updateUser = function () {
+            var updatedUser = self.updatedUser();
+            //$.put("http://localhost:6045/api/user", updatedUser).done(function () {
+               
+            //});
+            $.ajax({
+                url: 'http://localhost:6045/api/user/',
+                type: 'put',
+                data: updatedUser
+            });
+            self.updatedUser(null);
         }
     }
 

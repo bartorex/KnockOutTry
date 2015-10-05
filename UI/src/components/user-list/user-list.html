@@ -44,10 +44,10 @@
     <p><label>Last Name:</label> <span data-bind="text: LastName"></span></p>
     <p><label>Gender:</label> <span data-bind="text: Gender"></span></p>
     <button class="btn btn-primary" data-bind="click: $parent.hideUserData">Hide</button>
-    <button class="btn btn-warning" data-bind="click: $parent.updateUser">Update</button>
+    <button class="btn btn-warning" data-bind="click: $parent.goToUpdateUser">Update</button>
 </div>
 
-<div data-bind="with: newUser, visible: newUser() != null" class="topAndBotMargin">
+<div data-bind="with: updatedUser, visible: updatedUser() != null" class="topAndBotMargin">
     <form class="form-horizontal">
         <p class="form-horizontal">
             <label>First Name:</label><input data-bind="value: FirstName" class="form-control" />
@@ -58,7 +58,7 @@
         <p class="form-horizontal">
             <label>Gender:</label><input data-bind="value: Gender" class="form-control" />
         </p>
-        <button class="btn btn-success" data-bind="click: $parent.saveUser">Save</button>
-        <button class="btn btn-danger" data-bind="click: $parent.cancelAddUser">Cancel</button>
+        <button class="btn btn-success" data-bind="click: $parent.updateUser">Save</button>
+        <button class="btn btn-danger" data-bind="click: $parent.cancelUpdateUser">Cancel</button>
     </form>
 </div>

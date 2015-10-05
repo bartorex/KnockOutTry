@@ -37,11 +37,6 @@ namespace WebApi.Controllers
             return await userService.GetById(id);
         }
 
-        //public void PostTest(string i)
-        //{
-        //    var number = i;
-        //}
-
         public async Task<int> PostUser(User user)
         {
             await userService.Add(user);
@@ -52,6 +47,16 @@ namespace WebApi.Controllers
         {
             var userFromDatabase = await userService.GetById(user);
             await userService.Delete(userFromDatabase);
+        }
+
+        public async Task PutUser(User user)
+        {
+            User userFromDatabase = await userService.GetById(user.Id);
+            userFromDatabase.FirstName = user.FirstName;
+            userFromDatabase.LastName = user.LastName;
+            userFromDatabase.Gender = user.Gender;
+            userFromDatabase.Products = user.Products;
+            await userService.Update(userFromDatabase);
         }
 
         //private async Task InitUsersDatabase()
