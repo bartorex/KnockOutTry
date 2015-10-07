@@ -24,7 +24,13 @@ define(['knockout', 'text!./user-list.html'], function (ko, templateMarkup) {
 
         $.getJSON("http://localhost:6045/api/user", function (data) {
             //var mappedUsers = $.map(data, function (item) { return new User(item) });
-            self.users(data);
+            for (var i = 0; i < data.length; i++) {
+                var newUser = new User();
+                newUser.Id(data.Id);
+                newUser.FirstName(data.FirstName);
+                self.users.push(newUser);
+            }
+            //self.users(data);
         });
 
         self.goToUserData = function (user) {
@@ -89,6 +95,11 @@ define(['knockout', 'text!./user-list.html'], function (ko, templateMarkup) {
                 type: 'put',
                 data: updatedUser
             });
+            self.users.remove(function (user) { return user.Id == updatedUser.Id});
+            self.users.push(updatedUser);
+            //var index = self.users.indexOf(function (user) { if (user.Id == updatedUser.Id) return user; return -1 });
+            //self.users.replace(self.users()[2], updatedUser);
+            //self.users()[2].FirstName(updatedUser.FirstName);
             self.updatedUser(null);
         }
     }
